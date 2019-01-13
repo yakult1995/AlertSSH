@@ -15,10 +15,6 @@ dotenv.load_dotenv(dotenv_path)
 SLACK_URL = os.environ.get("SLACK_URL")
 SLACK_ROOM = os.environ.get("SLACK_ROOM")
 
-print(sys.argv)
-print(SLACK_URL)
-
-
 # SlackにPOSTする内容をセット
 payload_dic = {
     'attachments': [
@@ -32,12 +28,12 @@ payload_dic = {
     				'short': 'true'
     			},
     			{
-    				'title': 'SSHクライアント',
-    				'value': sys.argv[2],
+    				'title': '接続元IP',
+    				'value': sys.argv[2].split(' ')[0],
     				'short': 'true'
     			},
     			{
-    				'title': '接続先',
+    				'title': '接続先HOST',
     				'value': sys.argv[3],
     				'short': 'true'
     			},
@@ -46,7 +42,7 @@ payload_dic = {
     ],
     'channel': SLACK_ROOM,
     'username': 'SecurityBot',
-    'icon_emoji': 'ghost'
+    'icon_emoji': ':ghost:'
 }
 
 # SlackにPOST
