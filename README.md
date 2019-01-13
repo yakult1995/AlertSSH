@@ -1,8 +1,8 @@
 ## 使用方法
-* VPS内にcloneして下記コマンドで事前準備
+* VPS内にcloneして下記コマンドで事前準備  
 `pipenv install`  
-`chmod 777 sshlogin.sh`
-`cp sshlogin.sh /etc/ssh/sshrc`
+`chmod 777 sshlogin.sh`  
+`cp sshlogin.sh /etc/ssh/sshrc`  
 
 * .envの作成
 ```
